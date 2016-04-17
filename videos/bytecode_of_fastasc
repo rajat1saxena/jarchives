@@ -1,0 +1,67 @@
+Compiled from "fastasc.java"
+class fastasc {
+  fastasc();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_5
+       1: newarray       int
+       3: astore_1
+       4: aload_1
+       5: iconst_0
+       6: iconst_2
+       7: iastore
+       8: aload_1
+       9: iconst_2
+      10: iconst_4
+      11: iastore
+      12: aload_1
+      13: invokestatic  #2                  // Method multiply:([I)V
+      16: iconst_0
+      17: istore_2
+      18: iload_2
+      19: aload_1
+      20: arraylength
+      21: if_icmpge     57
+      24: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      27: new           #4                  // class java/lang/StringBuilder
+      30: dup
+      31: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+      34: aload_1
+      35: iload_2
+      36: iaload
+      37: invokevirtual #6                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      40: ldc           #7                  // String \t
+      42: invokevirtual #8                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      45: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      48: invokevirtual #10                 // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      51: iinc          2, 1
+      54: goto          18
+      57: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      60: invokevirtual #11                 // Method java/io/PrintStream.println:()V
+      63: return
+
+  public static void multiply(int[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: iload_1
+       3: aload_0
+       4: arraylength
+       5: if_icmpge     22
+       8: aload_0
+       9: iload_1
+      10: aload_0
+      11: iload_1
+      12: iaload
+      13: iconst_5
+      14: imul
+      15: iastore
+      16: iinc          1, 1
+      19: goto          2
+      22: return
+}
