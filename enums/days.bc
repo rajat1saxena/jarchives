@@ -1,0 +1,59 @@
+Compiled from "days.java"
+public class days {
+  Day day;
+
+  public days(Day);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #2                  // Field day:LDay;
+       9: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #3                  // class days
+       3: dup
+       4: getstatic     #4                  // Field Day.TUESday:LDay;
+       7: invokespecial #5                  // Method "<init>":(LDay;)V
+      10: astore_1
+      11: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      14: new           #7                  // class java/lang/StringBuilder
+      17: dup
+      18: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+      21: ldc           #9                  // String Day is:
+      23: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      26: aload_1
+      27: getfield      #2                  // Field day:LDay;
+      30: invokevirtual #11                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      33: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      36: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      39: invokestatic  #14                 // Method Day.values:()[LDay;
+      42: astore_2
+      43: aload_2
+      44: arraylength
+      45: istore_3
+      46: iconst_0
+      47: istore        4
+      49: iload         4
+      51: iload_3
+      52: if_icmpge     93
+      55: aload_2
+      56: iload         4
+      58: aaload
+      59: astore        5
+      61: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      64: new           #7                  // class java/lang/StringBuilder
+      67: dup
+      68: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+      71: ldc           #15                 // String Value is:
+      73: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      76: aload         5
+      78: invokevirtual #11                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      81: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      84: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      87: iinc          4, 1
+      90: goto          49
+      93: return
+}
