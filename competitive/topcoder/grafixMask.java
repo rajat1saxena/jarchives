@@ -37,18 +37,24 @@ public class grafixMask{
 		}
 	}
 
-	public static int[] sortedAreas(String[] rectangles){
+	public static int[] sortedAreas(String[] rectangles) {
+
+		List<Integer> list = new ArrayList<Integer>();
 
 		// do the breath first search to fill the connected area
 		Stack<Node> stack = new Stack<Node>();
+
+		// Push first node on the stack
 		stack.push(node[0][0]);
 
-		while(stack.empty()==false){
+		while(stack.empty() == false) {
 			//pop the element
 			Node n = stack.pop();
 
-			// check that node is not visited before
-			
+			// check if the node is visited before
+			if (!n.fill) {
+
+			}
 		}
 
 		return new int[1];
