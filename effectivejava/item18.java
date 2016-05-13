@@ -42,7 +42,9 @@ abstract class AbstractPhone implements Phone{
 /**
 * Concrete implementation of AbstractPhone abstract class for Motorola phones.
 */
-class MotorolaPhone extends AbstractPhone {
+// We don't want someone to create a subclass of this class, so we marked it 
+// 'final'
+final class MotorolaPhone extends AbstractPhone {
 	@Override public void call(String number) {
 		System.out.println("Motorola call: " + number);
 	}
