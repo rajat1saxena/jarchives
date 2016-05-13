@@ -39,7 +39,7 @@ class Rectangle extends Shape {
 		this.height = height;
 	}
 
-	// accessor method
+	// accessor methods
 	double getWidth() {
 		return width;
 	}
