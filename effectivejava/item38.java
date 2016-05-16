@@ -8,7 +8,7 @@
 class item38{
 
 	// The class is private as item38 class is the sole consumer of the Validator
-	// class and 'static' as it does not not need access to enclosing class' 
+	// class and 'static' as it does not need access to enclosing class' 
 	// instance(Item 22)
 	private static class Validator{
 		/**
