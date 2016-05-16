@@ -42,6 +42,8 @@ class ComplexSet{
 	private ComplexSet(Complex[] complexSet) {
 		// Immutable object as we converted the input array which is mutable
 		// (Bloch: Non-zero length array is always mutable)
+		//
+		// In other words we are making a "defensive copy" of mutable object(Item 39)
 		this.complexList = Collections.unmodifiableList(Arrays.asList(complexSet));
 	}
 
