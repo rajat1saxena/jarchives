@@ -1,0 +1,27 @@
+/**
+* This class establishes some of the best practices told under item 40
+*
+* - For parameter types, favor interfaces over classes
+* - Prefer two-element enum types to boolean parameters
+*/
+class Item40{
+	// the following enum saves us from designing the 
+	// printPersonType in a boolean way i.e true for good person
+	// and false for bad person. Plus in future we can add more
+	// types as well.
+	private enum PersonType = {
+		GOOD,
+		BAD
+	}
+
+	// simple method to print 'good' or 'bad' based on enum
+	// value passed
+	static void printPersonType(PersonType p) {
+		System.out.println("Person type: " + p);
+	}
+	
+	public static void main(String args[]) {
+		// simply prints person type based on enum passed
+		printPersonType(PersonType.GOOD);
+	}
+}

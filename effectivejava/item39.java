@@ -84,7 +84,7 @@ final class Immut2{
 	// no mutators allowed for immutable class
 }
 	
-class mutablepass{
+class Item39{
 	public static void main(String args[]) {
 		// Use Immut2, if true immutability is required
 		Immut im = new Immut(new Mutab(2, 4), 0);		
