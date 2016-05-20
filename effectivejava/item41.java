@@ -14,9 +14,10 @@ import java.util.*;
 class Item41{
 	/*
 	* The following class has 3 overloaded methods. Only
-	* the third one will be invoked as it will decided during
-	* compile time based on the compile time instance type, 
-	* which is a Collection<?>.
+	* the third one will be invoked as it is decided during
+	* compile time that which overloaded method will be called
+	* In case of overriding, which overridden method to call
+	* is decided during runtime(dynamic).
 	*/
 	// Pitfall: To make the member methods of the following
 	// class 'static', we have to make the class static itself 
@@ -47,6 +48,24 @@ class Item41{
 		*/
 	}
 
+	// following set of classes exhibit overriding, so correct methods are
+	// resolved during run time.
+	private static class Wine {
+		public void showWine() {
+			System.out.println("Normal wine");
+		}
+	}
+	private static class SparklingWine extends Wine {
+		@Override public void showWine() {
+			System.out.println("Sparkling wine");
+		}
+	}
+	private static class BlackWine extends Wine {
+		@Override public void showWine() {
+			System.out.println("Black wine");
+		}
+	}
+
 	public static void main(String args[]) {
 		System.out.println("Problem: Three different types yielding same result");
 		Collection<?>[] collection = {
@@ -61,5 +80,14 @@ class Item41{
 		}
 
 		System.out.println("To solve, use the 4th method as the only method, instead of three overloaded ones");
+
+		// demonstrating dynamic(run time) resolution in case of overriding
+		Wine[] wines = {
+			new Wine(), new SparklingWine(), new BlackWine()
+		};
+		for(Wine wine: wines) {
+			wine.showWine();
+		};
+
 	}
 }
