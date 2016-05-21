@@ -31,7 +31,7 @@ abstract class AbstractPhone implements Phone{
 	/**
 	 * Logs sms details to the Phone log.
 	 */
-	// we don't want overrides to override this method
+	// we don't want anyone to override this method
 	@Override public final void sms(String number) { 
 		System.out.println("Sending text to " + number);
 	}
