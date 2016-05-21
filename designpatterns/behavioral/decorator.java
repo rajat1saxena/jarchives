@@ -31,7 +31,7 @@ final class StandardCoffee implements Coffee {
 abstract class CoffeeAddition implements Coffee {
 	protected Coffee coffee;
 
-	public CoffeeAddition(Coffee coffee) {
+	CoffeeAddition(Coffee coffee) {
 		this.coffee = coffee;
 	}
 
