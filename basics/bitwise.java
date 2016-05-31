@@ -15,8 +15,8 @@ class Bitwise {
 		System.out.println("After >>: " + Integer.toString(i>>1));
 		System.out.println("After >>>: " + Integer.toString(i>>>1));
 		
-		// In Java 7 we can use 0b notation to represent number in
-		// binary and 0x to represent number in hex.
+		// In Java 7 we can use '0b' notation to represent number in
+		// binary and '0x' to represent number in hex.
 		System.out.println("Bitwise AND: " + Integer.toBinaryString(0b1010&0b1111));
 		// following operation is also known as inclusive OR
 		System.out.println("Bitwise OR: " + Integer.toBinaryString(0b1010_0000|0b1111_1101));
