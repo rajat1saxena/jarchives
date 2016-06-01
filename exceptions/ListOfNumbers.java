@@ -36,7 +36,7 @@ class ListOfNumbers {
 				// Checked exception. It won't let the program compile
 				// until addressed using THROWS or TRY-CATCH.
 				pw = new PrintWriter(new FileWriter
-						("listofnumber.txt")
+						("/zand/listofnumber.txt")
 					);
 				for (int i=0; i<SIZE; i++) {
 					System.out.println("Value at " + i + " : " + list.get(i));
@@ -48,8 +48,15 @@ class ListOfNumbers {
 				}
 		} catch(IOException e) {
 			System.out.println("IOException: " + e.getMessage());
-			// Additionally, print the stack trace
-			e.printStackTrace();
+			// Following code shows hot to call the getStackTrace()
+			// on the exception object.
+			StackTraceElement elements[] = e.getStackTrace();
+			for(int i=0, n=elements.length; i<n; i++) {
+				System.err.println(elements[i].getFileName()
+					+ ":" + elements[i].getLineNumber()
+					+ " >> "
+					+ elements[i].getMethodName() + "()");
+			}	
 		} catch(IndexOutOfBoundsException x) {
 			System.out.println("IndexOutOfBoundsException: " + x.getMessage()); 
 		}
