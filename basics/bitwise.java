@@ -5,6 +5,7 @@
 class Bitwise {
 	public static void main(String args[]) {
 		int i = 8;
+
 		System.out.println("Before shift: " + Integer.toBinaryString(i));
 		// The <<< operator will pad 0 to leftmost bit while
 		// << operator will leave the leftmost bit intact and
