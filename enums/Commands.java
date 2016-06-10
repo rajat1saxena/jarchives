@@ -5,22 +5,24 @@
 */
 public class Commands {
 	enum Command {
-		GO("goes"), 
-		STOP("stops"), 
-		FORWARD("forwards"), 
-		BACK("backs"), 
-		DIE("dies");
+		GO("goes", 1), 
+		STOP("stops", 2), 
+		FORWARD("forwards", 3), 
+		BACK("backs", 4), 
+		DIE("dies", 5);
 		
 		private String commandString;
+		private int commandPriority;
 		
 		// Enum constructors are always private
-		Command(String commandString) {
+		Command(String commandString, int commandPriority) {
 			this.commandString = commandString;
+			this.commandPriority = commandPriority;
 		}
 
 		@Override
 		public String toString() {
-			return commandString;
+			return commandString + " at " + commandPriority;
 		}
 	}
 
