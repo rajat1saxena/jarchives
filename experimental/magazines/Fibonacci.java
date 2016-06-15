@@ -7,7 +7,7 @@
 * Read: What is the JIT compiler actually doing?
 *
 * Some commands:
-* > time java -XX:+PrintCompilation Fibonacci 48
+* time java -XX:+PrintCompilation Fibonacci 48
 */
 public final class Fibonacci {
 	/**
