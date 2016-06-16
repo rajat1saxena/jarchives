@@ -1,6 +1,9 @@
 /**
-* This program illustrates techinques to fast multiply using
-* 'exponentiation by squaring' technique.
+* The class provides 'Exponentiation by Squaring' functions.
+*
+* Read following links:
+* https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+* https://discuss.codechef.com/questions/20451/a-tutorial-on-fast-modulo-multiplication-exponential-squaring
 */
 class Exponentiation {
 	/**
@@ -9,7 +12,7 @@ class Exponentiation {
 	* For large enough result, {@code result%1000000007 } is produced
 	* as final result;
 	*/
-	private static long raiseTo (int base, int exp) {
+	public static long raiseTo (int base, int exp) {
 		// Base cases
 		if (exp == 0) return 1;
 		if (exp == 1) return base;
@@ -30,12 +33,27 @@ class Exponentiation {
 	* squaring' process.
 	*
 	* This implementation considers squaring as a multiplication. So
-	* the results are inclusive.
+	* the results are inclusive. Additionally, this implementation also
+	* assumes that first digit in binaryRepresentation is not zero.
+	* Read: http://stackoverflow.com/a/14927639/942589 
 	*/
-	private int totalMultiplications(int base, int exp) {
+	public static int totalMultiplications(int base, int exp) {
 		// Get binary representation of the exponent in an int array
-		// int binary[] = getBinaryRepresentation(exp);
-		return 0;
+		String binaryRepresentation = getBinaryRepresentation(exp);
+		int result = 0;
+		// In following statement, variable i starts from 1 as it is 
+		// assumed that first digit is always 1 and we are not mult-
+		// plying at that stage.
+		for (int i=1; i<binaryRepresentation.length(); i++) {
+			int value = Integer.parseInt(
+							binaryRepresentation.substring(i, i+1)
+						);
+			if (value==0)
+				result += 1; // Squaring
+			else 
+				result += 2; // Squaring and multiplication
+		}
+		return result;
 	}
 
 	/**
@@ -44,7 +62,7 @@ class Exponentiation {
 	* @param  decimal a decimal number
 	* @return 		  binary representation as a string
 	*/
-	private static String getBinaryRepresentation(int decimal) {
+	public static String getBinaryRepresentation(int decimal) {
 		String binary = "";
 		
 		while (true) {
@@ -60,20 +78,25 @@ class Exponentiation {
 
 		return result;
 	}
+}
 
+// Driver
+class ExponentiationDriver {
 	public static void main(String args[]) {
 		// Print pow(a, b)
 		/*
-		System.out.println( raiseTo(
+		System.out.println( Exponentiation.raiseTo(
 				Integer.parseInt(args[0]),
 				Integer.parseInt(args[1])
 			)
 		);
 		*/
 
+		// Get total number of multiplications
 		System.out.println( 
-			getBinaryRepresentation(
-				Integer.parseInt(args[0]) 
+			Exponentiation.totalMultiplications(
+				Integer.parseInt(args[0]),
+				Integer.parseInt(args[1])
 			)
 		);
 	}
