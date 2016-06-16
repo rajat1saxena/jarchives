@@ -19,10 +19,10 @@ public final class Squareroot {
 				break;
 			}
 			if (mid*mid > number) {
-				max = mid - 1;
+				max = mid;// - 1;
 			}
 			if (mid*mid < number) {
-				min = mid + 1;
+				min = mid;// + 1;
 			}
 			// Calculate mid
 			mid = (max+min)/2;
