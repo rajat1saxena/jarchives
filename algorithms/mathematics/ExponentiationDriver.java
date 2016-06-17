@@ -35,6 +35,7 @@ class Exponentiation {
 	* This implementation considers squaring as a multiplication. So
 	* the results are inclusive. Additionally, this implementation also
 	* assumes that first digit in binaryRepresentation is not zero.
+	*
 	* Read: http://stackoverflow.com/a/14927639/942589 
 	*/
 	public static int totalMultiplications(int base, int exp) {
