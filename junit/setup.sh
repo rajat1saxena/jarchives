@@ -2,12 +2,14 @@
 # contained in this directory.
 #
 # Pre-requisite: Download and save junit.jar in this directory.
-file="junit.jar"
-if [ -f "$file" ]
+# Run: . setup.sh (or source.sh)
+junit="junit.jar"
+hamcrest="hamcrest.jar"
+if [ -f "$junit" -a -f "$hamcrest" ]
 then
 	export JUNIT_HOME=`pwd`
-	export CLASSPATH=`echo $CLASSPATH`:$JUNIT_HOME/$file:.
+	export CLASSPATH=`echo $CLASSPATH`:$JUNIT_HOME/$junit:$JUNIT_HOME/$hamcrest:.
 	echo "Setup complete"
 else
-	echo "No junit.jar found in this directory"
+	echo "Either junit or hamcrest or both is(are) missing"
 fi
