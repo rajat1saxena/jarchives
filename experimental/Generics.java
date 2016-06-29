@@ -1,20 +1,22 @@
 /**
-* This program is demonstrate how to create instance of any class
-* using reflection and .class as method argument
+* This program is demonstrate how to create instances of any class
+* using reflection, Generics and .class as method argument
 */
 final class Generics<T> {
-	private T t;
+	private Class<T> t;
 
-	public Generics(T t) throws IllegalStateException{
-		this.t = t.newInstance();
+	public Generics(Class<T> t) {
+		this.t = t;
 	}
 
 	/**
 	* Returns t
 	* 
-	* @return field variable
+	* @return new instance of class T
 	*/
-	public T getInstance() { return t; }
+	public T getInstance() 
+	throws InstantiationException, IllegalAccessException
+	{ return t.newInstance(); }
 
 	/**
 	* Type to spawn an object of.
@@ -27,6 +29,6 @@ final class Generics<T> {
 
 	public static void main(String args[]) {
 		Generics<MyObj> generic = new Generics<MyObj>(MyObj.class);
-		
+		System.out.println(generic.getClass());
 	}
 }
