@@ -27,6 +27,7 @@ final class Generics<T> {
 		public MyObj(int a) { this.a = a; }
 	}
 
+	// Driver main method
 	public static void main(String args[]) {
 		Generics<MyObj> generic = new Generics<MyObj>(MyObj.class);
 		System.out.println(generic.getClass());
