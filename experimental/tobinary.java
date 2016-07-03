@@ -1,3 +1,6 @@
+/**
+* Program to find digits in binary
+*/
 public class tobinary{
 	public static String findDigitsInBinary(int a) {
 	    String output = "";
