@@ -1,5 +1,5 @@
 /*
-* Class to demonstrate split() method
+* Program to demonstrate split() method
 */
 class split{
 	public static void main(String args[]){
