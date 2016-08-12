@@ -42,27 +42,27 @@ class CustomPhone{
 
 		// initialize all optional parameters
 		public Builder addBluetooth(){
-			this.bluetooth = bluetooth;
+			this.bluetooth = true;
 			return this;
 		}
 		public Builder addCamera(){
-			this.camera = camera;
+			this.camera = true;
 			return this;
 		}
 		public Builder addRearCamera(){
-			this.rearcamera = rearcamera;
+			this.rearcamera = true;
 			return this;
 		}
 		public Builder addNetworkLTE(){
-			this.networklte = networklte;
+			this.networklte = true;
 			return this;
 		}
 		public Builder addNetworkGsm(){
-			this.networkgsm = networkgsm;
+			this.networkgsm = true;
 			return this;
 		}
 		public Builder addNetworkCdma(){
-			this.networkcdma = networkcdma;
+			this.networkcdma = true;
 			return this;
 		}
 		public Builder addGpu(String gpu){
@@ -97,6 +97,9 @@ public class buildery{
 			.build();
 
 		System.out.println(x.toString());
+		System.out.println(x.camera);
+		System.out.println(x.networkgsm);
+
 
 		CustomPhone y = new CustomPhone.Builder("Mediatek",320)
 			.addCamera()
